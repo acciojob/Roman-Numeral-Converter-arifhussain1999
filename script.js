@@ -8,16 +8,23 @@ function convertToRoman(num) {
       5:['V', 5], 
       6:['I', 1]
     };
+	 let romanNumeral = '';
+	
+for (let [symbol, value] of obj) {
+        // Repeat adding the current symbol while the value is less than or equal to the number
+        while (value <= num) {
+            romanNumeral += symbol;
+            num -= value;
+        }
+    }
 
+    return romanNumeral;
   //your code here
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
 // console.log(convertToRoman(36));
-
-
-
 
 // do not edit below this line
 module.exports = convertToRoman
